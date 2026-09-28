@@ -1,0 +1,84 @@
+/* Dashboard geometry is invariant across all carousel states. */
+.widget.widget--invest-class {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  block-size: var(--gips-widget-block-size);
+  min-block-size: var(--gips-widget-block-size);
+  max-block-size: var(--gips-widget-block-size);
+  padding-block-end: 44px;
+  gap: 12px;
+}
+.widget--invest-class .event-meta-row { gap: 8px; }
+.widget--invest-class .widget-meta {
+  font-family: var(--gips-font-body);
+  font-size: var(--gips-type-detail-size);
+  font-weight: 400;
+  line-height: var(--gips-type-detail-line-height);
+}
+.invest-class-preview { min-block-size: 0; display: flex; flex-direction: column; gap: 12px; }
+.widget--invest-class h2 { text-wrap: pretty; flex: none; }
+.widget--invest-class .invest-class-preview > p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  font-family: var(--gips-font-body);
+  font-size: var(--gips-type-body-size);
+  font-weight: 400;
+  line-height: var(--gips-type-body-line-height);
+}
+/* Figma course preview has two title lines; the full title is on its page. */
+.widget--invest-class-course h2 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.invest-class-tail { display: flex; flex-direction: column; gap: 14px; }
+.invest-class-tail .widget-card-footer { block-size: 32px; flex: none; margin: 0; padding: 0; }
+.invest-class-progress { display: grid; gap: 10px; }
+.invest-class-progress > .gips-metadata { color: var(--gips-text-secondary); text-align: center; }
+.invest-class-cover { width: 100%; height: 80px; flex: none; object-fit: cover; background: var(--gips-surface-muted); border-radius: 12px; }
+.invest-class-catalog { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gips-grid-gap); }
+.invest-class-card { display: flex; flex-direction: column; gap: 16px; }
+.invest-class-card h3, .invest-class-card p { margin: 0; }
+.invest-class-card > a { align-self: flex-start; margin-block-start: auto; }
+.invest-class-page > a { align-self: flex-start; }
+.invest-class-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); gap: var(--gips-grid-gap); align-items: start; }
+.invest-class-body, .invest-class-aside { display: grid; gap: var(--gips-grid-gap); min-width: 0; }
+.invest-class-page h2 { margin: 0; font-size: var(--gips-type-card-title); }
+.invest-class-page p { margin: 0; line-height: 1.6; }
+.invest-class-status, .invest-class-facts, .invest-class-materials { display: grid; gap: 16px; }
+.invest-class-content { display: grid; gap: 32px; }
+.invest-class-content section { display: grid; gap: 12px; }
+.invest-class-content p { max-width: 76ch; }
+.invest-class-caption { color: var(--gips-text-secondary); }
+.invest-class-detail-image { width: 100%; border-radius: var(--gips-radius); outline: 1px solid rgb(0 0 0 / 10%); outline-offset: -1px; }
+.invest-class-detail-image.is-course { max-height: 240px; object-fit: cover; }
+.invest-class-facts dl { display: grid; gap: 16px; margin: 0; }
+.invest-class-facts dt { color: var(--gips-text-secondary); margin-block-end: 4px; }
+.invest-class-facts dd { margin: 0; }
+.invest-class-facts .reward-chip { justify-self: start; }
+.invest-class-materials a { justify-content: start; height: auto; white-space: normal; text-align: start; }
+@media (max-width: 1400px) { .invest-class-catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1000px) { .invest-class-layout, .invest-class-catalog { grid-template-columns: minmax(0, 1fr); } }
+.invest-class-page { --gips-text-secondary: #61656b; }
+.invest-class-page > a { justify-self: start; }
+.invest-class-page .status-tag { color: var(--gips-text-secondary); }
+.invest-class-page .reward-chip { color: #572d00; }
+
+.invest-class-progress .gips-step-progress > .is-complete { background: var(--gips-green); }
+
+.invest-class-transcript {
+  overflow-wrap: break-word;
+  font-family: var(--gips-font-body);
+  font-size: var(--gips-type-body-size);
+  line-height: 1.6;
+  max-inline-size: 76ch;
+}
+
+.invest-class-transcript { display: grid; gap: 32px; }
+.invest-class-transcript .invest-class-intro { color: var(--gips-text-secondary); }
+.invest-class-content .invest-class-qa { gap: 20px; }
+.invest-class-qa + .invest-class-qa { border-block-start: 1px solid var(--color-light-border-primary, #e7e7e9); padding-block-start: 32px; }
+.invest-class-transcript h2 { font-weight: 700; line-height: 1.3; text-wrap: pretty; }
+.invest-class-answer { display: grid; gap: 12px; padding-inline-start: 20px; border-inline-start: 2px solid var(--color-light-border-primary, #e7e7e9); }
+.invest-class-answer .invest-class-speaker { font-weight: 500; color: var(--gips-text); }
+
+.invest-class-transcript h2 { position: relative; }
+.invest-class-source-time { position: absolute; inset-block-start: -24px; inset-inline-end: 0; font-size: var(--gips-type-detail-size); font-weight: 400; color: var(--gips-text-secondary); }

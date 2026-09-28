@@ -1,0 +1,5 @@
+.catalog-filter { width: 456px; flex: none; }
+.catalog-filter--compact { width: 240px; }
+.catalog-filter [class*='segmented-control__segment'] { font-size: 14px; font-weight: 400; }
+.catalog-filter [class*='segmented-control__selected_'] { font-weight: 500; }
+@media (max-width: 700px) { .catalog-filter { width: 100%; } }

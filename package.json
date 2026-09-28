@@ -1,0 +1,45 @@
+{
+  "name": "gips-investment-space",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:standalone": "tsc -b && vite build --config vite.standalone.config.ts && node scripts/package-standalone.mjs",
+    "test": "npm run test:e2e",
+    "test:e2e": "npm run build && npm run build:standalone && playwright test",
+    "test:e2e:update": "npm run build && playwright test tests/e2e/visual.spec.ts --update-snapshots",
+    "test:integration": "npm run build && playwright test tests/e2e/integration.spec.ts",
+    "test:accessibility": "npm run build && playwright test tests/e2e/accessibility.spec.ts",
+    "test:visual": "npm run build && playwright test tests/e2e/visual.spec.ts",
+    "test:standalone": "npm run build:standalone && playwright test tests/e2e/standalone.spec.ts --project=chrome-1920",
+    "typecheck": "tsc -b --pretty false",
+    "preview": "vite preview",
+    "test:routes": "npm run build && playwright test tests/e2e/route-ids.spec.ts"
+  },
+  "dependencies": {
+    "@alfalab/core-components": "50.32.0",
+    "@alfalab/core-components-config": "1.1.0",
+    "@alfalab/core-components-stack-context": "1.0.1",
+    "@alfalab/icons-glyph": "2.292.0",
+    "@alfalab/icons-invest": "1.7.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.1",
+    "@types/react": "18.3.24",
+    "@types/react-dom": "18.3.7",
+    "@vitejs/plugin-react": "6.1.1",
+    "typescript": "7.0.2",
+    "vite": "8.3.0",
+    "vite-plugin-singlefile": "^2.3.3"
+  },
+  "engines": {
+    "node": "26.x",
+    "npm": "11.x"
+  }
+}

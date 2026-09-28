@@ -1,0 +1,33 @@
+.daily-invest { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.daily-invest h2, .daily-invest p { margin: 0; overflow-wrap: anywhere; }
+.daily-invest a { color: inherit; }
+.daily-invest [role=status] { display: flex; flex-direction: column; gap: 12px; }
+.daily-invest small { color: var(--color-text-secondary, #62646c); overflow-wrap: anywhere; }
+.daily-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+.daily-detail { gap: 24px; }
+.daily-detail li { margin-block: 12px; }
+.widget.daily-invest { height: auto; min-height: 342px; }
+.assignment-queue { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.assignment-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 24px; }
+.assignment-row { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.assignment-row > div { flex: 1 1 280px; min-width: 0; }
+.assignment-row h3 { margin: 0 0 12px; overflow-wrap: anywhere; }
+.assignment-row p { margin: 4px 0; overflow-wrap: anywhere; }
+.assignment-filters { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
+.assignment-filters > div { flex: 1 1 220px; min-width: 0; }
+.assignment-detail .section-card { max-width: 1100px; }
+.daily-source { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.learning-now-grid.learning-work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.assignment-queue > a, .assignment-detail > a, .assignment-detail .daily-invest > a { align-self: flex-start; justify-self: start; }
+@media (max-width: 1400px) {
+  .learning-now-grid.learning-work-grid { grid-template-columns: minmax(0, 1fr); }
+}
+.widget.event-board { height: auto; min-height: 342px; }
+.event-board h1, .event-detail h1 { overflow-wrap: anywhere; }
+.event-board > a, .event-detail > a { align-self: flex-start; }
+.event-detail .daily-invest > button { align-self: flex-start; }
+.event-board .assignment-row { border-bottom: 1px solid var(--color-light-border-primary, #e7e7e9); padding-bottom: 16px; }
+.event-board .assignment-row:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.widget.event-board > p { min-height: 0; }
+.event-board h2 { margin: 0; }
